@@ -20,11 +20,6 @@
                         this.toggle = false;
                         this.vid.pause();
                     }.bind(this));
-
-                    // Añadir el evento 'ended' al video para redireccionar cuando termine
-                    this.vid.addEventListener('ended', function() {
-                        window.location.href = 'http://caveri.moreno.gob.ar';
-                    });
                 },
             });
         </script>
@@ -68,15 +63,14 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <!-- Hacer el video más grande -->
                 <a-video
-              src="#vid"
-              position='50 150 -100'
-              rotation='90 0 180'
-              width='100'
-              height='100'
-              >
-          </a-video>
+                    src="#vid"
+                    scale="1 1 1"
+                    position="0 0.1 0"
+                    rotation="-90 0 0"
+                    class="clickable"
+                    gesture-handler
+                ></a-video>
             </a-marker>
 
             <a-entity camera></a-entity>
